@@ -9,14 +9,18 @@ const hasRightLength = (password) => {
 
 
 const hasUpperCaseCharacter = (password) => {
-    var regex = /\d/g;
-	return regex.test(password);
+   return isNotNull(password) && password.toLowerCase() !== password;
 };
 
-const hasLowerCaseCharacter = (str) => str;
+
+const hasLowerCaseCharacter = (password) => {
+    return isNotNull(password) && password.toUpperCase() !== password;
+};
 
 
-const hasDigit = (str) => str;
+const hasDigit = (password) => { 
+    return /\d/.test(password);
+};
 
 
 const minimumConditionsReached = conditions => {
